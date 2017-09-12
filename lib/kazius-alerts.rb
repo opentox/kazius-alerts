@@ -83,24 +83,3 @@ class KaziusAlerts
   end
 
 end
-
-class ConsensusMutagenicity
-
-  def self.predict smiles
-    sa_prediction = KaziusAlerts.predict smiles
-    lazar_prediction = Lazar.predict smiles
-    confidence = 0
-    if sa_prediction[:prediction] == false && lazar_mutagenicity.prediction == 0
-      confidence = 0.85
-    elsif sa_prediction[:prediction] == true && lazar_mutagenicity.prediction == 1
-      confidence = 0.85 * ( 1 - sa_prediction[:error_product] )
-    elsif sa_prediction[:prediction] == false && lazar_mutagenicity.prediction == 1
-      confidence = 0.11
-    elsif sa_prediction[:prediction] == true && lazar_mutagenicity.prediction == 0
-      confidence = ( 1 - sa_prediction[:error_product] ) - 0.57
-    end
-    {:prediction => prediction, :confidence => confidence}
-  end
-
-end
-
