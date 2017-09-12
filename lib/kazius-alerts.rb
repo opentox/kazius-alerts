@@ -1,4 +1,4 @@
-re 'openbabel'
+require 'openbabel'
 
 class KaziusAlerts
 
@@ -70,6 +70,7 @@ X2,X3]2~[X2,X3]1~[X2,X3]~[X2,X3]~[X2,X3]3~[X2,X3]2~[X2,X3]~[X2,X3]~[X2,X3]3),$([
         smarts_pattern.init sma[1]
         matches << sma if smarts_pattern.match(mol)
       end
+    end
 
     matches.each { |m| error_product *= error(m) }
 
