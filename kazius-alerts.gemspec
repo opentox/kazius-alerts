@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "kazius-alerts"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.authors     = ["Christoph Helma"]
   s.email       = ["helma@in-silico.ch"]
   s.homepage    = "http://github.com/opentox/kazius-alerts"
